@@ -65,8 +65,20 @@ def docs():
             'url': '/api/gsoc',
             'method': 'GET',
             'description': 'A gsoc endpoint serving GET requests as a webhook'
-        },
 
+        },
+        {
+            'url': '/api/gsoc/winners/all',
+            'method': 'GET',
+            'description': 'A gsoc endpoint to get list of all gsoc winners'
+
+        },
+        {
+            'url': '/api/gsoc/winners?id=2',
+            'method': 'GET',
+            'description': 'A gsoc endpoint to get specific winner'
+
+        },
     ]
 
     return jsonify({'endpoints': endpoints})
