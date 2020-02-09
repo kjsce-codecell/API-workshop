@@ -1,0 +1,13 @@
+{
+    "name": "Mr Robot",
+    "premiered": "24-06-2015",
+    "genres": [
+        "Drama",
+        "Crime",
+        "Thriller"
+    ],
+    "runtime": "60min",
+    "no_of_seasons": 4,
+    "imdb_rating": 8.5,
+    "imdb_link": "tt4158110"
+}
