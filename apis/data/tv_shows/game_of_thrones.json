@@ -1,0 +1,13 @@
+{
+    "name": "Game of Thrones",
+    "premiered": "17-04-2011",
+    "genres": [
+        "Drama",
+        "Adventure",
+        "Fantasy"
+    ],
+    "runtime": "57min",
+    "no_of_seasons": 8,
+    "imdb_rating": 9.3,
+    "imdb_link": "https://www.imdb.com/title/tt0944947/?ref_=nv_sr_srsg_0"
+}
