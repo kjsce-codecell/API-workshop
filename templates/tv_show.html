@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ tv_shows.name }}</title>
+    <title>{{ tv_show.name }}</title>
 </head>
 <body>
-    Premiered: {{ tv_shows.premiered }}
+    Premiered: {{ tv_show.premiered }}
     <br>
-    Genres: 
-        <p>
-        {% for genre in tv_shows.genre %}
-            {{ genre }}, 
-        {% endfor %}
-        </p>
+    Genres: {{ genre }}
     <br>
-    No. of seasons : {{ tv_shows.no_of_seasons }} <br>
-    Runtime: {{ tv_shows.runtime }} <br>
-    <a href="{{ tv_shows.imdb_link}}">IMDB Link</a>
+    No. of seasons : {{ tv_show.no_of_seasons }} <br>
+    Runtime: {{ tv_show.runtime }} <br>
+    <a href="{{ tv_show.imdb_link}}">IMDB Link</a>
 </body>
 </html>
