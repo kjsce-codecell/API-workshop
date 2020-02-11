@@ -3,7 +3,7 @@ Collection of all the APIs created by the team as part of the API workshop
 
 ## Instructions:
 
-To run the flask server
+To run the flask server:
 
 ``` 
 python3 app.py
