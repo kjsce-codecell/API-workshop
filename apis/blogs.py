@@ -40,12 +40,12 @@ def docs():
         {
             'url': '/random',
             'method': 'GET',
-            'description': 'Fetch json of any random blog. \n Example: blogs/random'
+            'description': 'Fetch json of any random blog. Example: blogs/random'
         },
         {
             'url': '/blog',
             'method': 'GET',
-            'description': 'Fetch blogs with a particular tag. \n Example: blogs/blog?tags=Science'
+            'description': 'Fetch blogs with a particular tag. Example: blogs/blog?tags=Science'
         },
     ]
 
