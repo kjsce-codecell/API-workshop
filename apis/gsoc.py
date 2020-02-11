@@ -102,25 +102,25 @@ def docs():
         {
             'url': '/api/gsoc',
             'method': 'GET',
-            'org': 'A gsoc endpoint serving GET requests as a webhook'
+            'description': 'A gsoc endpoint serving GET requests as a webhook'
 
         },
         {
             'url': '/api/gsoc/winners/all',
             'method': 'GET',
-            'org': 'A gsoc endpoint to get list of all gsoc winners'
+            'description': 'A gsoc endpoint to get list of all gsoc winners'
 
         },
         {
             'url': '/api/gsoc/winners/2',
             'method': 'GET',
-            'org': 'A gsoc endpoint to get specific winner'
+            'description': 'A gsoc endpoint to get specific winner'
 
         },
         {
             'url': '/api/gsoc/winners/add_winner',
             'method': 'POST',
-            'org': 'A gsoc endpoint to add a new winner'
+            'description': 'A gsoc endpoint to add a new winner'
 
         },
 
