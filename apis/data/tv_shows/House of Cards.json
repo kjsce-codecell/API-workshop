@@ -1,1 +1,12 @@
-{"name": "House of Cards", "premiered": "01-02-2013", "genres": ["Drama", "Thriller"], "runtime": "60min", "no_of_seasons": 6, "imdb_rating": 8.4, "imdb_link": "tt1856010"}
+{
+    "name": "House of Cards",
+    "premiered": "01-02-2013",
+    "genres": [
+        "Drama",
+        "Thriller"
+    ],
+    "runtime": "60min",
+    "no_of_seasons": 6,
+    "imdb_rating": 8.4,
+    "imdb_link": "tt1856010"
+}

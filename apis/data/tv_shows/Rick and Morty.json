@@ -1,1 +1,13 @@
-{"name": "Rick and Morty", "premiered": "02-12-2013", "genres": ["Comedy", "Adventure", "Science-Fiction"], "runtime": "30min", "no_of_seasons": 4, "imdb_rating": 9.3, "imdb_link": "tt2861424"}
+{
+    "name": "Rick and Morty",
+    "premiered": "02-12-2013",
+    "genres": [
+        "Comedy",
+        "Adventure",
+        "Science-Fiction"
+    ],
+    "runtime": "30min",
+    "no_of_seasons": 4,
+    "imdb_rating": 9.3,
+    "imdb_link": "tt2861424"
+}
