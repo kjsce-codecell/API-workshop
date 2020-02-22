@@ -43,7 +43,7 @@ def docs():
             'url': '/random',
             'method': 'GET',
             'description': 'Fetch the html page of a random comic. ' +
-                'Use /api/comics/random/?json to the data in json format'
+                'Use /api/comics/random?json to the data in json format'
         },
         {
             'url': '/add',
