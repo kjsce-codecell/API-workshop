@@ -127,5 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Editor
+.vscode
+
 tv_shows.http
-.vscode/
