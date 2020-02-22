@@ -3,6 +3,7 @@ import requests
 
 from apis import comics
 from apis import test
+from apis import blogs
 from apis import gsoc
 from apis import tv_shows
 
@@ -13,14 +14,15 @@ app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
 
 # import apis and assigning url_prefix in lexographical order
+app.register_blueprint(blogs, url_prefix='/api/blogs')
 app.register_blueprint(comics, url_prefix='/api/comics')
-app.register_blueprint(test, url_prefix='/api/test')
 app.register_blueprint(gsoc, url_prefix='/api/gsoc')
+app.register_blueprint(test, url_prefix='/api/test')
 app.register_blueprint(tv_shows, url_prefix='/api/tv_shows')
 
 @app.route('/api')
 def api():
-    endpoints = ['test', 'comics', 'gsoc', 'tv_shows']
+    endpoints = ['blogs', 'comics', 'gsoc', 'test', 'tv_shows']
     docs = []
     url = request.url_root
     for endpoint in endpoints:
