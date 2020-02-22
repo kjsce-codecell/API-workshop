@@ -1,0 +1,11 @@
+{
+	"id": "4",
+	"firstname": "Fritz",
+	"surname": "Haber",
+	"born": "1868-12-09",
+	"died": "1934-01-29",
+	"gender": "male",
+	"prizeyear": "1918",
+	"category": "chemistry",
+	"motivation": "for the synthesis of ammonia from its elements"
+}
