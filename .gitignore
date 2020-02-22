@@ -130,3 +130,5 @@ dmypy.json
 
 # Editor
 .vscode
+
+tv_shows.http
