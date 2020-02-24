@@ -1,0 +1,11 @@
+{
+	"id":"1",
+	"firstname":"Wilhelm Conrad",
+	"surname":"Roentgen",
+	"born":"1845-03-27",
+	"died":"1923-02-10",
+	"gender":"male",
+	"prizeyear": "1901",
+	"category":"physics",
+	"motivation":"in recognition of the extraordinary services he has rendered by the discovery of the remarkable rays subsequently named after him"
+}
