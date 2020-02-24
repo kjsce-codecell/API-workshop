@@ -3,6 +3,7 @@ import requests
 
 from apis import comics
 from apis import test
+from apis import memes
 from apis import nobel
 from apis import blogs
 from apis import gsoc
@@ -20,11 +21,12 @@ app.register_blueprint(comics, url_prefix='/api/comics')
 app.register_blueprint(gsoc, url_prefix='/api/gsoc')
 app.register_blueprint(nobel, url_prefix='/api/nobel')
 app.register_blueprint(test, url_prefix='/api/test')
+app.register_blueprint(memes, url_prefix='/api/memes')
 app.register_blueprint(tv_shows, url_prefix='/api/tv_shows')
 
 @app.route('/api')
 def api():
-    endpoints = ['blogs', 'comics', 'gsoc', 'nobel', 'test', 'tv_shows']
+    endpoints = ['blogs', 'comics', 'gsoc', 'memes', 'nobel', 'test', 'tv_shows']
     docs = []
     url = request.url_root
     for endpoint in endpoints:
