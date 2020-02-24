@@ -1,459 +1,459 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "description": "API",
-      "version": "1.0.0",
-      "title": "List of APIs"
+        "description": "API",
+        "version": "1.0.0",
+        "title": "List of APIs"
     },
     "servers": [
-      {
-        "url": "/"
-      }
+        {
+            "url": "/"
+        }
     ],
     "tags": [
-      {
-        "name": "Blog Request",
-        "description": "Example API for requesting and return blog requests"
-      },
-      {
-        "name": "Comics Request",
-        "description": "Example API for requesting and return comics requests"
-      },
-      {
-        "name": "GSOC Request",
-        "description": "Example API for requesting and return GSOC requests"
-      },
-      {
-        "name": "Memes Request",
-        "description": "Example API for requesting and return Memes requests"
-      },
-      {
-        "name": "Nobel Request",
-        "description": "Example API for requesting and return Nobel requests"
-      },
-      {
-        "name": "TV Shows Request",
-        "description": "Example API for requesting and return TV Shows requests"
-      }
+        {
+            "name": "Blog Request",
+            "description": "Example API for requesting and return blog requests"
+        },
+        {
+            "name": "Comics Request",
+            "description": "Example API for requesting and return comics requests"
+        },
+        {
+            "name": "GSOC Request",
+            "description": "Example API for requesting and return GSOC requests"
+        },
+        {
+            "name": "Memes Request",
+            "description": "Example API for requesting and return Memes requests"
+        },
+        {
+            "name": "Nobel Request",
+            "description": "Example API for requesting and return Nobel requests"
+        },
+        {
+            "name": "TV Shows Request",
+            "description": "Example API for requesting and return TV Shows requests"
+        }
     ],
     "paths": {
-      "/api/blogs/random?json": {
-        "get": {
-          "tags": [
-            "Blog Request"
-          ],
-          "summary": "Returns a random blog",
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        }
-      },
-      "/api/blogs/blog?tags={tag}": {
-        "get": {
-          "tags": [
-            "Blog Request"
-          ],
-          "summary": "Get blog request with given tag",
-          "parameters": [
-            {
-                "name": "tag",
-                "required": true,
-                "description": "Tag Name",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/tagName"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        }
-      },
-      "/api/comics/random?json": {
-        "get": {
-          "tags": [
-            "Comics Request"
-          ],
-          "summary": "Returns a random comic",
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        }
-      },
-      "/api/comics/add": {
-        "post": {
-            "tags": [
-              "Comics Request"
-            ],
-            "summary": "Create a new comic",
-            "requestBody": {
-              "description": "Comic Request Object",
-              "required": true,
-              "content": {
-                "application/json": {
-                  "title": "Title of the comic"
+        "/api/blogs/random?json": {
+            "get": {
+                "tags": [
+                    "Blog Request"
+                ],
+                "summary": "Returns a random blog",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
                 }
-              }
-            },
-            "produces": [
-              "application/json"
-            ],
-            "responses": {
-              "201": {
-                "description": "OK.. Comic Added",
-              },
-              "400": {
-                "description": "Failed. Bad post data."
-              }
-            }
-          }
-      },
-      "/api/gsoc/winners/all": {
-        "get": {
-            "tags": [
-              "GSOC Request"
-            ],
-            "summary": "Returns list of winners in GSOC",
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          }
-      },
-      "/api/gsoc/add_winner": {
-        "post": {
-            "tags": [
-              "GSOC Request"
-            ],
-            "summary": "Create a new GSOC winner",
-            "requestBody": {
-              "description": "GSOC Request Object",
-              "required": true,
-              "content": {
-                "application/json": {
-                  "name": "Name of the winner",
-                  "org": "Organization of the winner",
-                  "project": "Project name",
-                  "year": "Year"
-                }
-              }
-            },
-            "produces": [
-              "application/json"
-            ],
-            "responses": {
-              "201": {
-                "description": "OK.. GSOC Winner Added"
-              },
-              "400": {
-                "description": "Failed. Bad post data."
-              }
-            }
-        }
-      },
-      "/api/gsoc/winners/{id}": {
-        "get": {
-          "tags": [
-            "GSOC Request"
-          ],
-          "summary": "Get GSOC winner with given id",
-          "parameters": [
-            {
-                "name": "id",
-                "required": true,
-                "description": "ID of the winner",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/id"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        },
-        "put": {
-            "summary": "Edit a GSOC winner details by ID",
-            "tags": [
-              "GSOC Request"
-            ],
-            "parameters": [
-              {
-                "in": "path",
-                "name": "id",
-                "required": true,
-                "description": "GSOC Winner id",
-                "schema": {
-                  "$ref": "#/components/schemas/id"
-                }
-              }
-            ],
-            "requestBody": {
-              "description": "GSOC Winner Object",
-              "required": true,
-              "content": {
-                "application/json": {
-                    "name": "Name of the winner",
-                    "org": "Organization of the winner",
-                    "project": "Project name",
-                    "year": "Year"
-                }
-              }
-            },
-            "produces": [
-              "application/json"
-            ],
-            "responses": {
-              "200": {
-                "description": "OK.. Details of GSOC Winner Updated"
-              },
-              "400": {
-                "description": "Failed. Bad post data."
-              }
             }
         },
-        "delete": {
-            "summary": "Delete GSOC Winner  by ID",
-            "tags": [
-              "GSOC Request"
-            ],
-            "parameters": [
-              {
-                "in": "path",
-                "name": "id",
-                "required": true,
-                "description": "GSOC  Id",
-                "schema": {
-                  "$ref": "#/components/schemas/id"
+        "/api/blogs/blog?tags={tag}": {
+            "get": {
+                "tags": [
+                    "Blog Request"
+                ],
+                "summary": "Get blog request with given tag",
+                "parameters": [
+                    {
+                        "name": "tag",
+                        "required": true,
+                        "description": "Tag Name",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/tagName"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
                 }
-              }
-            ],
-            "responses": {
-              "204": {
-                "description": "OK",
-                "schema": {
-                  "$ref": "#/components/schemas/id"
+            }
+        },
+        "/api/comics/random?json": {
+            "get": {
+                "tags": [
+                    "Comics Request"
+                ],
+                "summary": "Returns a random comic",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
                 }
-              },
-              "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Book Request not found."
-              }
             }
-          }
-      },
-      "/api/memes/random?json": {
-        "get": {
-            "tags": [
-              "Memes Request"
-            ],
-            "summary": "Returns a random meme from reddit",
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          }
-      },
-      "/api/nobel/random": {
-        "get": {
-            "tags": [
-              "Nobel Request"
-            ],
-            "summary": "Returns a random nobel prize winner",
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          }
-      },
-      "/api/nobel/id?id={id}": {
-        "get": {
-          "tags": [
-            "Nobel Request"
-          ],
-          "summary": "Get Nobel prize winner with given id",
-          "parameters": [
-            {
-                "name": "id",
-                "required": true,
-                "description": "ID of the winner",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/id"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        }
-      },
-      "/api/nobel/gender?gender={gender}": {
-        "get": {
-          "tags": [
-            "Nobel Request"
-          ],
-          "summary": "Get Nobel prize winner by Gender",
-          "parameters": [
-            {
-                "name": "id",
-                "required": true,
-                "description": "Gender",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/id"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        }
-      },
-      "/api/nobel/category?category={category}": {
-        "get": {
-          "tags": [
-            "Nobel Request"
-          ],
-          "summary": "Get Nobel prize winner by category",
-          "parameters": [
-            {
-                "name": "id",
-                "required": true,
-                "description": "Category Name",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/CategoryName"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        }
-      },
-      "/api/tv_shows/random?json": {
-        "get": {
-            "tags": [
-              "TV Shows Request"
-            ],
-            "summary": "Returns a random tv show",
-            "responses": {
-              "200": {
-                "description": "OK"
-              }
-            }
-          }
-      },
-      "/api/tv_shows/tv_show?id={id}": {
-        "get": {
-          "tags": [
-            "TV Shows Request"
-          ],
-          "summary": "Get tv show with given id",
-          "parameters": [
-            {
-                "name": "id",
-                "required": true,
-                "description": "ID of the TV show",
-                "type": "string",
-                "schema": {
-                    "$ref": "#/components/schemas/id"
-                  }
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            },
-            "400": {
-                "description": "Failed. Misunderstood Request."
-              },
-              "404": {
-                "description": "Failed. Blog request not found."
-              }
-          }
-        }
-      },
-      "/api/tv_shows/add": {
-        "post": {
-            "tags": [
-              "TV Shows Request"
-            ],
-            "summary": "Create a new tv show",
-            "requestBody": {
-              "description": "Tv show Request Object",
-              "required": true,
-              "content": {
-                "application/json": {
-                  "title": "Title of the TV Show"
+        },
+        "/api/comics/add": {
+            "post": {
+                "tags": [
+                    "Comics Request"
+                ],
+                "summary": "Create a new comic",
+                "requestBody": {
+                    "description": "Comic Request Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "title": "Title of the comic"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "OK.. Comic Added",
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
                 }
-              }
-            },
-            "produces": [
-              "application/json"
-            ],
-            "responses": {
-              "201": {
-                "description": "OK.. TV Show Added"
-              },
-              "400": {
-                "description": "Failed. Bad post data."
-              }
             }
-          }
-      }
-    }, 
+        },
+        "/api/gsoc/winners/all": {
+            "get": {
+                "tags": [
+                    "GSOC Request"
+                ],
+                "summary": "Returns list of winners in GSOC",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/gsoc/add_winner": {
+            "post": {
+                "tags": [
+                    "GSOC Request"
+                ],
+                "summary": "Create a new GSOC winner",
+                "requestBody": {
+                    "description": "GSOC Request Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "name": "Name of the winner",
+                            "org": "Organization of the winner",
+                            "project": "Project name",
+                            "year": "Year"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "OK.. GSOC Winner Added"
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        },
+        "/api/gsoc/winners/{id}": {
+            "get": {
+                "tags": [
+                    "GSOC Request"
+                ],
+                "summary": "Get GSOC winner with given id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "description": "ID of the winner",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
+                }
+            },
+            "put": {
+                "summary": "Edit a GSOC winner details by ID",
+                "tags": [
+                    "GSOC Request"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "GSOC Winner id",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "GSOC Winner Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "name": "Name of the winner",
+                            "org": "Organization of the winner",
+                            "project": "Project name",
+                            "year": "Year"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK.. Details of GSOC Winner Updated"
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete GSOC Winner  by ID",
+                "tags": [
+                    "GSOC Request"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "GSOC  Id",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Book Request not found."
+                    }
+                }
+            }
+        },
+        "/api/memes/random?json": {
+            "get": {
+                "tags": [
+                    "Memes Request"
+                ],
+                "summary": "Returns a random meme from reddit",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/nobel/random": {
+            "get": {
+                "tags": [
+                    "Nobel Request"
+                ],
+                "summary": "Returns a random nobel prize winner",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/nobel/id?id={id}": {
+            "get": {
+                "tags": [
+                    "Nobel Request"
+                ],
+                "summary": "Get Nobel prize winner with given id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "description": "ID of the winner",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
+                }
+            }
+        },
+        "/api/nobel/gender?gender={gender}": {
+            "get": {
+                "tags": [
+                    "Nobel Request"
+                ],
+                "summary": "Get Nobel prize winner by Gender",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "description": "Gender",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
+                }
+            }
+        },
+        "/api/nobel/category?category={category}": {
+            "get": {
+                "tags": [
+                    "Nobel Request"
+                ],
+                "summary": "Get Nobel prize winner by category",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "description": "Category Name",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/CategoryName"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
+                }
+            }
+        },
+        "/api/tv_shows/random?json": {
+            "get": {
+                "tags": [
+                    "TV Shows Request"
+                ],
+                "summary": "Returns a random tv show",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/tv_shows/tv_show?id={id}": {
+            "get": {
+                "tags": [
+                    "TV Shows Request"
+                ],
+                "summary": "Get tv show with given id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "description": "ID of the TV show",
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Failed. Misunderstood Request."
+                    },
+                    "404": {
+                        "description": "Failed. Blog request not found."
+                    }
+                }
+            }
+        },
+        "/api/tv_shows/add": {
+            "post": {
+                "tags": [
+                    "TV Shows Request"
+                ],
+                "summary": "Create a new tv show",
+                "requestBody": {
+                    "description": "Tv show Request Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "title": "Title of the TV Show"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "OK.. TV Show Added"
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        }
+    },
     "components": {
         "schema": {
             "tagName": {
@@ -467,24 +467,24 @@
             },
             "comicRequestPostBody": {
                 "properties": {
-                  "title": {
-                    "type": "string",
-                    "format": "string"
-                  }
+                    "title": {
+                        "type": "string",
+                        "format": "string"
+                    }
                 }
             },
             "id": {
                 "properties": {
-                  "uuid": {
-                    "type": "string"
-                  }
+                    "uuid": {
+                        "type": "string"
+                    }
                 }
             },
             "gender": {
                 "properties": {
-                  "gender": {
-                    "type": "string"
-                  }
+                    "gender": {
+                        "type": "string"
+                    }
                 }
             },
             "CategoryName": {
@@ -498,4 +498,4 @@
             }
         }
     }
-  }
+}
