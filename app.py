@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import requests
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from apis import comics
 from apis import test
@@ -14,6 +15,17 @@ app = Flask(__name__, instance_relative_config=True)
 
 # Load the config file
 app.config.from_object('config')
+
+SWAGGER_URL = '/swagger'
+API_URL = '/static/swagger.json'
+SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "APIs"
+    }
+)
+app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 
 # import apis and assigning url_prefix in lexographical order
 app.register_blueprint(blogs, url_prefix='/api/blogs')
