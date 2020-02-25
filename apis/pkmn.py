@@ -109,6 +109,50 @@ def update_pokemon(pid):
     poke['species'] = request.json.get('species', poke['species'])
     return jsonify(poke)
 
+@pkmn.route('/qupdate/<int:pid>',methods=['PATCH'])
+def quick_update(pid):
+    poke = {}
+    for p in pokemon:
+        if p['id'] == pid:
+            poke = p
+            break
+    chk = 0
+    field = []
+    if len(poke) == 0:
+        abort(404)
+    if not request.json:
+        abort(400)
+    if 'name' in request.json and type(request.json['name']) != str:
+        abort(400)
+    elif 'name' in request.json:
+        chk = 1
+        field.append('name')
+    if 'number' in request.json and type(request.json['number']) != int:
+        abort(400)
+    elif 'number' in request.json:
+        chk = 1
+        field.append('number')
+    if 'type1' in request.json and type(request.json['type1']) != str:
+        abort(400)
+    elif 'type1' in request.json:
+        chk = 1
+        field.append('type1')
+    if 'type2' in request.json and type(request.json['type1']) != str:
+        abort(400)
+    elif 'type2' in request.json:
+        chk = 1
+        field.append('type2')
+    if 'species' in request.json and type(request.json['species']) != str:
+        abort(400)
+    elif 'species' in request.json:
+        chk = 1
+        field.append('species')
+    
+    if chk==1:
+        for s in field:
+            poke[s] = request.json.get(s, poke[s])
+    return jsonify(poke)
+
 @pkmn.route('/delete/<int:pid>',methods=['DELETE'])
 def delete_pokemon(pid):
     poke = {}
@@ -152,7 +196,7 @@ def docs():
         {
             'url': '/api/pkmn/add',
             'method': 'POST',
-            'description': 'A gsoc endpoint to add a new winner'
+            'description': 'A pkmn endpoint to add a new Pokemon'
 
         },
         {
