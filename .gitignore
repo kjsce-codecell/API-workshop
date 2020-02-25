@@ -132,3 +132,5 @@ dmypy.json
 .vscode
 
 tv_shows.http
+api-env/
+.vscode/
