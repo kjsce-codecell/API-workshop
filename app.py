@@ -36,9 +36,11 @@ app.register_blueprint(test, url_prefix='/api/test')
 app.register_blueprint(memes, url_prefix='/api/memes')
 app.register_blueprint(tv_shows, url_prefix='/api/tv_shows')
 
+
 @app.route('/api')
 def api():
-    endpoints = ['blogs', 'comics', 'gsoc', 'memes', 'nobel', 'test', 'tv_shows']
+    endpoints = ['blogs', 'comics', 'gsoc',
+                 'memes', 'nobel', 'test', 'tv_shows']
     docs = []
     url = request.url_root
     for endpoint in endpoints:
@@ -46,9 +48,11 @@ def api():
         docs.extend(data['endpoints'])
     return jsonify({'docs': docs})
 
+
 @app.errorhandler(404)
 def error(e):
     return "Use the /api endpoint to get documentation about all the APIs"
+
 
 if __name__ == "__main__":
     app.run()

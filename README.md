@@ -8,22 +8,34 @@
 
 Collection of all the APIs created by the team as part of the API workshop conducted by [KJSCE CodeCell](https://github.com/kjsce-codecell). The architecture and working of APIs was explained and the students were guided to create their own APIs by the end of the workshop.
 
-## Instructions:
-1. Create a virtual environment
-2. To install dependenices of ```requirements.txt```:
+## Instructions
 
-```
+Using Python
+
+1. Create a virtual environment
+2. To install dependenices of `requirements.txt` :
+
+``` 
 pip install -r requirements.txt
 ```
+
 3. To run the flask server:
 
 ``` 
 python3 app.py
 ```
 
+Using Docker
+
+``` sh
+docker build . -t apiworkshop
+docker run -p 5000:5000 apiworkshop
+```
+
 Open http://localhost:5000/ to view details for using all the API endpoints implemented.
 
 4. To view swagger documentation of APIs:
+
 Open http://{your_url}/swagger
 
 ### Steps to add more APIs:
@@ -35,7 +47,7 @@ Open http://{your_url}/swagger
 
 ### Contributing
 
-Open to `enhancements` & `bug-fixes`
+Open to `enhancements` & `bug-fixes` 
 
 ### Note
 
