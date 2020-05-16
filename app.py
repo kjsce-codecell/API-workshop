@@ -9,7 +9,7 @@ from apis import nobel
 from apis import blogs
 from apis import gsoc
 from apis import tv_shows
-
+from apis import pkmn
 # Initialize the app
 app = Flask(__name__, instance_relative_config=True)
 
